@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Post Details</h1>
+  <div>
+    <h3>Title: {{ post.title }}</h3>
+    <img src="{{ post.content.url }}" alt="Post image" width="500px">
+    <div>
+        <a href="{% url 'update_post' post_id=post.id %}" class="btn btn-primary">Update</a>
+        <a href="{% url 'delete_post' post_id=post.id %}" class="btn btn-danger">Delete</a>
+      </div>
+      
+    
+  </div>
+{% endblock %}
